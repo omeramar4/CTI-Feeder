@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{532984AE-04BF-4876-A789-F7859C3CC886}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Winform</RootNamespace>
+    <AssemblyName>FEEDER</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SkylineLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyModbus">
+      <HintPath>..\libs\EasyModbus.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.5.0\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="onvif.discovery">
+      <HintPath>..\libs\onvif.discovery.dll</HintPath>
+    </Reference>
+    <Reference Include="onvif.services">
+      <HintPath>..\libs\onvif.services.dll</HintPath>
+    </Reference>
+    <Reference Include="onvif.session">
+      <HintPath>..\libs\onvif.session.dll</HintPath>
+    </Reference>
+    <Reference Include="onvif.utils">
+      <HintPath>..\libs\onvif.utils.dll</HintPath>
+    </Reference>
+    <Reference Include="OzekiSDK">
+      <HintPath>..\libs\OzekiSDK.dll</HintPath>
+      <Aliases>OZ</Aliases>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\libs\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\libs\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\libs\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="utils.activities">
+      <HintPath>..\libs\utils.activities.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.async">
+      <HintPath>..\libs\utils.async.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.bootstrapping">
+      <HintPath>..\libs\utils.bootstrapping.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.common">
+      <HintPath>..\libs\utils.common.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.diagnostics">
+      <HintPath>..\libs\utils.diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.fsharp">
+      <HintPath>..\libs\utils.fsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.linq">
+      <HintPath>..\libs\utils.linq.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.wpf">
+      <HintPath>..\libs\utils.wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="utils.xml">
+      <HintPath>..\libs\utils.xml.dll</HintPath>
+    </Reference>
+    <Reference Include="video.player.host">
+      <HintPath>..\..\Google Drive\CTI\Projects\Feeder\libs\video.player.host.exe</HintPath>
+    </Reference>
+    <Reference Include="video.player.media">
+      <HintPath>..\libs\video.player.media.dll</HintPath>
+    </Reference>
+    <Reference Include="video.player.net">
+      <HintPath>..\libs\video.player.net.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrevisConfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrevisConfForm.Designer.cs">
+      <DependentUpon>CrevisConfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JoystickConfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoystickConfForm.Designer.cs">
+      <DependentUpon>JoystickConfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonConfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ButtonConfForm.Designer.cs">
+      <DependentUpon>ButtonConfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelayConfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelayConfForm.Designer.cs">
+      <DependentUpon>RelayConfForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CrevisConfForm.resx">
+      <DependentUpon>CrevisConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JoystickConfForm.resx">
+      <DependentUpon>JoystickConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonConfForm.resx">
+      <DependentUpon>ButtonConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RelayConfForm.resx">
+      <DependentUpon>RelayConfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="video.player.host.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Buttons\Stop.png" />
+    <None Include="Buttons\Start.png" />
+    <Content Include="avcodec-54.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avdevice-54.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avfilter-2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avformat-54.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="avutil-51.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Buttons\On.png" />
+    <None Include="Buttons\Off.png" />
+    <None Include="Buttons\Horn3.png" />
+    <None Include="Buttons\Check2.png" />
+    <Content Include="msvcp110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="msvcp110d.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="msvcr110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="msvcr110d.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="postproc-52.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="swresample-0.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="swscale-2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="vccorlib110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="vccorlib110d.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="video.player.host.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SkylineLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CTI_joystick\CTI_joystick.csproj">
+      <Project>{8c24ad8a-4993-4b16-8228-0097227849bd}</Project>
+      <Name>CTI_joystick</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Apps\" />
+    <Folder Include="Libs\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
